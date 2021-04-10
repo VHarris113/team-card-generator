@@ -1,0 +1,23 @@
+{
+  "name": "team-cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VHarris113/team-cards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VHarris113/team-cards/issues"
+  },
+  "homepage": "https://github.com/VHarris113/team-cards#readme"
+}
