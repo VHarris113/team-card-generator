@@ -1,0 +1,29 @@
+* {
+    font-family: 'Lobster', cursive;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+header {
+    display: flex;
+    background-color: #c951b9;
+    color: #ffffff;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+li {
+    font-family: 'Xanh Mono', monospace;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: content-box;
+}
