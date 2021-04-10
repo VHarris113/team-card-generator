@@ -27,3 +27,9 @@ section {
     align-items: center;
     box-sizing: content-box;
 }
+
+.card {
+    display: flex;
+    width: 50%;
+    height: 50%;
+}
