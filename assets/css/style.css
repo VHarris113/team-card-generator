@@ -23,13 +23,18 @@ li {
 
 section {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: center; */
     align-items: center;
     box-sizing: content-box;
 }
 
-.card {
+.row {
     display: flex;
-    width: 50%;
+    /* align-items: center; */
+    justify-content: center;
+    /* margin-left: 130pt; */
+}
+
+.card {
     height: 50%;
 }
