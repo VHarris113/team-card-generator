@@ -1,4 +1,4 @@
-const markdown = require('./assets/utils/generateMarkdown.js');
+const markdown = require('./assets/utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
