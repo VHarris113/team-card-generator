@@ -1,4 +1,4 @@
-const markdown = require('./utils/generateMarkdown');
+const markdown = require('./assets/utils/generateMarkdown.js');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -23,7 +23,7 @@ const generateTeamCards = (answers) => `
       <div class="card text-white mb-3" style="max-width: 18rem;">
         <div class="card-header">
           <h4>${answers.name}</h4>
-          <h4>${answers.title}</h4>
+          <h4>${markdown.titleBadge(answers.title)}</h4>
         </div>
         <div class="card-body">
           <p>
