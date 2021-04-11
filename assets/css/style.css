@@ -38,3 +38,7 @@ section {
 .card {
     height: 50%;
 }
+
+.card-body {
+    overflow:visible;
+}
