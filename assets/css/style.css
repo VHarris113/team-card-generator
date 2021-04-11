@@ -1,7 +1,6 @@
 * {
     font-family: 'Lobster', cursive;
     width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
@@ -19,26 +18,38 @@ header {
 
 li {
     font-family: 'Xanh Mono', monospace;
+    color: #000000
 }
 
-section {
+/* section {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     box-sizing: content-box;
+} */
+
+h4 {
+    margin-bottom: 0.5rem;
+    overflow-y: hidden;
 }
 
 .row {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
-    /* margin-left: 130pt; */
+    margin-top: 3rem;
 }
 
 .card {
-    height: 50%;
+    background-color: #c951b9;
+    padding: -1.75rem;
+}
+
+.card-header {
+    overflow-x: initial;
+    padding-bottom: 0rem;
 }
 
 .card-body {
-    overflow:visible;
+    background-color: #e4e3e3;
+    overflow: -moz-hidden-unscrollable;
 }
