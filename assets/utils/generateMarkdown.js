@@ -9,4 +9,11 @@ function titleBadge(title) {
         return "Please choose and occupation."
 }
 
+function addNewEmployee() {
+    if ('Yes') {
+        return //create new employee card
+    } else ('No')
+    return //Congratulations message
+}
+
 module.exports = { titleBadge };

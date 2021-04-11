@@ -55,7 +55,7 @@ inquirer
             type: 'checkbox',
             name: 'title',
             message: 'What is their position?',
-            choices: ['Manager', 'Engineer', 'Intern']
+            choices: ['Manager', 'Engineer', 'Intern', 'None']
         },
         {
             type: 'input',
@@ -71,11 +71,17 @@ inquirer
             type: 'input',
             name: 'office',
             message: 'What is their office number?',
+        },
+        {
+          type: 'checkbox',
+          name: 'add',
+          message: 'Is there anyone employee you want to add?',
+          choices: ['Yes', 'No']
         }
     ])
 
     .then((answers) => {
         const teamCardsContent = generateTeamCards(answers);
-        fs.writeFile('index.html', teamCardsContent, err =>
+        fs.writeToFile('index.html', teamCardsContent, err =>
         err ? console.log(err) : console.log("Congratulations! Your team cards are now available!")
     )});
