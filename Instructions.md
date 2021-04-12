@@ -172,3 +172,45 @@ You are required to submit the following for review:
 
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+
+In index.js: 
+const path = require("path");
+const fs = require("fs");
+const OUTPUT_DIR = path.resolve(__dirname, "dist")
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+function runApp() {
+  ...Inquirer prompt and the functions that will ask users about manager, intern, and engineer.
+  function buildTeam() {
+    // Create the output directory if the output path doesn't exist
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+  }
+}
+runApp();
+
+Inside the classes:
+Each class will have a getRole() method that will return "Employee, Manager, Engineer, Intern"
+That text is used to determine which html template will be used.
+
+In the src folder, create a page-template.js
+const generateTeam = team => {
+const  generateManager = manager = {
+    ` return ${manager.getName()} etc etc`
+}
+const html = [];
+    html.push(team
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+    return html.join("");
+}
+module.exports = team => {
+  HTML TEMPLATE
+      WHERE YOU WANT TO SHOW THE USER CONTENT
+    <div>
+      ${generateTeam(team)}
+    </div>
+}
