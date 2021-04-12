@@ -1,14 +1,7 @@
 //Arrange Act Assert
+const Employee = require('../lib/Employee');
 
-//When you create a test, the focus is to test Functionality
-//Unit Testing
-
-const { describe } = require('yargs');
-const index = require('../index');
-
-//
-
-describe("", () => {
+describe("Employee", () => {
     describe('', () => {
         it("", () => {
             //Arrange
