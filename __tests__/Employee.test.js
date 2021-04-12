@@ -1,19 +1,28 @@
 //Arrange Act Assert
+const { expect, it, test } = require('@jest/globals');
 const Employee = require('../lib/Employee');
 
 describe("Employee", () => {
-    describe('', () => {
-        it("", () => {
-            //Arrange
-            const inputVariable
-            const outputVariable
-            //Act
-            const result = theObjectItself.
-            //Assert
-            expect(result).toEqual(outputVariable);
-        })
+    it("Can create new employee card", () => {
+        const create = new Employee();
+        expect(typeof(create).toBe("person")
+    )});
+
+    it("Name set via prompts", () => {
+        const name = "Rocket";
+        const create = new Employee(name);
+        expect(create.name).toBe(name);
+    });
+
+    it("Set ID via prompts", () => {
+        const testId = 1;
+        const create = new Employee("a", id);
+        expect(create.id).toBe(testId);
+    });
+
+    it("Set email via prompts", () => {
+        const testEmail = "test@test.net";
+        const create = new Employee()
     })
-    describe("it should", () => {
-    
-    })
+
 })
