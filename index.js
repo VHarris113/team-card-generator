@@ -42,8 +42,8 @@ function runApp() {
       }
   ])
   .then((answers) => {
-    const teamCardsContent = generateTeamCards(answers);
-    fs.writeToFile('index.html', teamCardsContent, err =>
+    const teamContent = buildTeam(answers);
+    fs.writeToFile('index.html', teamContent, err =>
     err ? console.log(err) : console.log("Congratulations! Your team cards are now available!")
 )});
 }
