@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
+const pageTemplate = require('./page-template');
+
 
 function runApp() {
 const generateTeamCards = (answers) => `
@@ -19,7 +21,7 @@ const generateTeamCards = (answers) => `
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./dist/style.css">
 </head>
 <header>My Team</header>
 <body>
