@@ -8,7 +8,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const pageTemplate = require('./src/page-template');
 
-let membersArray = [];
+let employeeArr = [];
 
 const roleQuestion = () => {
   inquirer.prompt([
@@ -28,16 +28,13 @@ const roleQuestion = () => {
       } else if
       (answers.employeeRole === 'Intern') {
         internQuestions();
-      } else {
-        console.log('No team cards generated. Try again.');
-        return
       }
   })
 }
 
 roleQuestion();
 
-function managerQuestions() {
+const managerQuestions = () => {
   inquirer.prompt([
       {
           type: 'input',
@@ -81,20 +78,24 @@ function managerQuestions() {
         })
       }
     })
-  }
+  };
 
-  const engineerQuestions = () => {
+const engineerQuestions = () => {
     inquirer.prompt([
       {
         type: 'input',
         name: 'name',
         message: "What is your engineer's name?",
-  
       },
       {
         type: 'input',
         name: 'email',
         message: "What's your engineer's email?"
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: "What's your engineer's id number?",
       },
       {
         type: 'input',
@@ -108,8 +109,8 @@ function managerQuestions() {
       },
     ]).then(answers => {
       console.log(answers);
-      const engineer = new Engineer(answers.managerName, answers.managerId, answers.managerEmail, answers.OfficeNum);
-      employeeArr.push(manager);
+      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
+      employeeArr.push(engineer);
 
       console.log(employeeArr);
 
@@ -123,54 +124,50 @@ function managerQuestions() {
         })
       }
     })
-  }
+  };
 
-// function runApp() {
-//   inquirer
-//   .prompt([
-//       {
-//           type: 'input',
-//           name: 'name',
-//           message: 'What is your team-member name?'
-//       },
-//       {
-//           type: 'checkbox',
-//           name: 'title',
-//           message: 'What is their position?',
-//           choices: ['Manager', 'Engineer', 'Intern']
-//       },
-//       {
-//           type: 'input',
-//           name: 'id',
-//           message: 'What is their identification number?',
-//       },
-//       {
-//           type: 'input',
-//           name: 'email',
-//           message: 'What is their email address?',
-//       },
-//       {
-//           type: 'input',
-//           name: 'office',
-//           message: 'What is their office number?',
-//       },
-//       {
-//         type: 'checkbox',
-//         name: 'add',
-//         message: 'Is there anyone employee you want to add?',
-//         choices: ['Yes', 'No']
-//       }
-//   ])
-//   .then((answers) => {
-//     const teamContent = buildTeam(answers);
-//     fs.writeToFile('index.html', teamContent, err =>
-//     err ? console.log(err) : console.log("Congratulations! Your team cards are now available!")
-// )}); }
+const internQuestions = () => {
+    inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: "What is your intern's name?",
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: "What's your intern's email?"
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: "What's your intern's id number?",
+      },
+      {
+        type: 'input',
+        name: 'university',
+        message: "What school/university does your intern attend?",
+      },
+      {
+        type: 'confirm',
+        name: 'addEmployee',
+        message: 'Do you need to add another employee?',
+      },
+    ]).then(answers => {
+      console.log(answers);
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.university);
+      employeeArr.push(intern);
 
-    //   function buildTeam() {
-    //     if (!fs.existsSync(OUTPUT_DIR)) {
-    //       fs.mkdirSync(OUTPUT_DIR)
-    //     }
-    //     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
-    //   }
-    // runApp();
+      console.log(employeeArr);
+
+      if (answers.addEmployee) {
+        roleQuestion();
+      } else {
+        let data = render(employeeArr);
+        fs.writeFile(outputPath, data, (err) => {
+          if (err) throw err;
+          console.log("This entry has been saved!")
+        })
+      }
+    })
+};
