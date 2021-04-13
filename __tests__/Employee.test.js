@@ -1,5 +1,3 @@
-//Arrange Act Assert
-const { expect, it, test } = require('@jest/globals');
 const Employee = require('../lib/Employee');
 
 describe("Employee", () => {
