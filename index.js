@@ -2,11 +2,38 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require("path");
 const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const pageTemplate = require('./src/page-template');
 
-membersArray = [];
+let membersArray = [];
+
+const roleQuestion = () => {
+  inquirer.prompt([
+    {
+    type: 'list',
+    message: 'What type of employee are you?',
+    name: employeeRole,
+    choices: ['Manager', 'Engineer', 'Intern'],
+    }
+  ])
+  .then(answers => {
+    if(answers.employeeRole === 'Manager') {
+      managerQuestions();
+    } else if
+      (answers.employeeRole === 'Engineer') {
+        engineerQuestions();
+      } else if
+      (answers.employeeRole === 'Intern') {
+        internQuestions();
+      } else {
+        console.log('No team cards generated. Try again.');
+        return
+      }
+  })
+}
 
 function createManager() {
   inquirer.prompt([
