@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require("path");
+const Manager = require("./lib/Manager");
 const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const pageTemplate = require('./src/page-template');
@@ -17,7 +18,7 @@ function runApp() {
           type: 'checkbox',
           name: 'title',
           message: 'What is their position?',
-          choices: ['Manager', 'Engineer', 'Intern', 'None']
+          choices: ['Manager', 'Engineer', 'Intern']
       },
       {
           type: 'input',
