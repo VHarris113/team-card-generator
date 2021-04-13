@@ -13,10 +13,10 @@ let membersArray = [];
 const roleQuestion = () => {
   inquirer.prompt([
     {
-    type: 'list',
-    message: 'What type of employee are you?',
-    name: employeeRole,
-    choices: ['Manager', 'Engineer', 'Intern'],
+      type: 'list',
+      message: 'What type of employee are you?',
+      name: 'employeeRole',
+      choices: ['Manager', 'Engineer', 'Intern'],
     }
   ])
   .then(answers => {
@@ -35,35 +35,94 @@ const roleQuestion = () => {
   })
 }
 
-function createManager() {
+roleQuestion();
+
+function managerQuestions() {
   inquirer.prompt([
       {
           type: 'input',
           name: 'managerName',
-          message: "What is your team manager's name?",
+          message: "What is your manager's name?",
       },
       {
           type: 'input',
           name: 'managerId',
-          message: "What is your team manager's id?",
+          message: "What is your manager's id?",
       },
       {
           type: 'input',
           name: 'managerEmail',
-          message: "What is your team manager's email?",
+          message: "What is team manager's email?",
       },
       {
           type: 'input',
           name: 'managerOfficeNum',
-          message: "What is your team manager's office number?",
+          message: "What is your manager's office number?",
+      },
+      {
+        type: 'confirm',
+        name: 'addEmployee',
+        message: 'Do you need to add another employee?',
       },
   ]).then(answers => {
       console.log(answers);
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.OfficeNum);
-      console.log(manager);
+      employeeArr.push(manager);
+
+      console.log(employeeArr);
+
+      if (answers.addEmployee) {
+        roleQuestion();
+      } else {
+        let data = render(employeeArr);
+        fs.writeFile(outputPath, data, (err) => {
+          if (err) throw err;
+          console.log("This entry has been saved!")
+        })
+      }
     })
-    console.log(membersArray);
+  }
+
+  const engineerQuestions = () => {
+    inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: "What is your engineer's name?",
   
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: "What's your engineer's email?"
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: "What's your engineer's GitHub account?",
+      },
+      {
+        type: 'confirm',
+        name: 'addEmployee',
+        message: 'Do you need to add another employee?',
+      },
+    ]).then(answers => {
+      console.log(answers);
+      const engineer = new Engineer(answers.managerName, answers.managerId, answers.managerEmail, answers.OfficeNum);
+      employeeArr.push(manager);
+
+      console.log(employeeArr);
+
+      if (answers.addEmployee) {
+        roleQuestion();
+      } else {
+        let data = render(employeeArr);
+        fs.writeFile(outputPath, data, (err) => {
+          if (err) throw err;
+          console.log("This entry has been saved!")
+        })
+      }
+    })
   }
 
 // function runApp() {
