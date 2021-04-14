@@ -6,7 +6,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-const pageTemplate = require('./src/page-template');
+const render = require('./src/page-template');
 
 let employeeArr = [];
 
@@ -53,7 +53,7 @@ const managerQuestions = () => {
       },
       {
           type: 'input',
-          name: 'managerOfficeNum',
+          name: 'officeNumber',
           message: "What is your manager's office number?",
       },
       {
@@ -63,7 +63,7 @@ const managerQuestions = () => {
       },
   ]).then(answers => {
       console.log(answers);
-      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.OfficeNumber);
+      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
       employeeArr.push(manager);
 
       console.log(employeeArr);
