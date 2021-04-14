@@ -1,19 +1,86 @@
-const index = require('../index');
+const path = require("path");
+const fs = require("fs");
 
-const makeTeam = team => {
-//A method for a template to render manager info
+const render = (employees) => {
+    let team = "";
 
-//A method for engineer
+    employee.forEach((employee) => {
+        switch (employee.getRole()) {
+            case "Manager":
+            team += `
+                <div class="card text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                  <h4>${employee.getName()}</h4>
+                  <h4>${employee.getRole()}</h4>
+                </div>
+                <div class="card-body">
+                  <p>
+                    <div class="card">
+                      <ul class="list-group">
+                        <li class="list-group-item">ID: ${employee.getId()}</li>
+                        <li class="list-group-item">Email: ${employee.getEmail()}</li>
+                        <li class="list-group-item">Office Number: ${employee.getOfficeNumber()}</li>
+                      </ul>
+                    </div>
+                  </p>
+                </div>
+              </div>
+              `;
+        break;
+            case "Engineer":
+                team += `
+                <div class="card text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                  <h4>${employee.getName()}</h4>
+                  <h4>${employee.getRole()}</h4>
+                </div>
+                <div class="card-body">
+                  <p>
+                    <div class="card">
+                      <ul class="list-group">
+                        <li class="list-group-item">ID: ${employee.getId()}</li>
+                        <li class="list-group-item">Email: ${employee.getEmail()}</li>
+                        <li class="list-group-item">GitHub: ${employee.getGithub()}</li>
+                      </ul>
+                    </div>
+                  </p>
+                </div>
+              </div>
+              `;
+        break;
+            case "Intern":
+                team += `
+                <div class="card text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                  <h4>${employee.getName()}</h4>
+                  <h4>${employee.getRole()}</h4>
+                </div>
+                <div class="card-body">
+                  <p>
+                    <div class="card">
+                      <ul class="list-group">
+                        <li class="list-group-item">ID: ${employee.getId()}</li>
+                        <li class="list-group-item">Email: ${employee.getEmail()}</li>
+                        <li class="list-group-item">Office Number: ${employee.getSchool()}</li>
+                      </ul>
+                    </div>
+                  </p>
+                </div>
+              </div>
+              `;
+        break;
+        default:
+            return "Well, that's not good. It broke.";
+        }});
 
-//A method for intern
 
 
+};
+        
 
-}
-
-
-module.exports = team => {
-    return `<!DOCTYPE html>
+    
+    const htmlPage = `
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -30,33 +97,11 @@ module.exports = team => {
     <header>My Team</header>
     <body>
         <main class="row">
-          ${{Team}}
+          ${{team}}
         </main>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
     </body>
     </html>`
-    
 }
-
-// In the src folder, create a page-template.js
-// const generateTeam = team => {
-// const  generateManager = manager = {
-//     ` return ${manager.getName()} etc etc`
-// }
-// const html = [];
-//     html.push(team
-//         .filter(employee => employee.getRole() === "Manager")
-//         .map(manager => generateManager(manager))
-//     );
-//     return html.join("");
-// }
-// module.exports = team => {
-//   HTML TEMPLATE
-//       WHERE YOU WANT TO SHOW THE USER CONTENT
-//     <div>
-//       ${generateTeam(team)}
-//     </div>
-// }
-

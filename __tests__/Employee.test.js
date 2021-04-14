@@ -20,7 +20,13 @@ describe("Employee", () => {
 
     it("Set email via prompts", () => {
         const testEmail = "test@test.net";
-        const create = new Employee()
+        const create = new Employee();
+        expect(create.testEmail).toBe(testEmail);
     })
 
+    test("getRole() should return \"Employee\"", () => {
+        const testValue = "Employee";
+        const e = new Employee("Rocket", 1, "test@test.com");
+        expect(e.getRole()).toBe(testValue);
+    })
 })

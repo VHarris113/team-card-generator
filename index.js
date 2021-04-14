@@ -7,8 +7,6 @@ const Intern = require("./lib/Intern");
 const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const pageTemplate = require('./src/page-template');
-const render = require("./lib/")
-
 
 let employeeArr = [];
 
@@ -65,7 +63,7 @@ const managerQuestions = () => {
       },
   ]).then(answers => {
       console.log(answers);
-      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.OfficeNum);
+      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.OfficeNumber);
       employeeArr.push(manager);
 
       console.log(employeeArr);
@@ -147,7 +145,7 @@ const internQuestions = () => {
       },
       {
         type: 'input',
-        name: 'university',
+        name: 'school',
         message: "What school/university does your intern attend?",
       },
       {
@@ -157,7 +155,7 @@ const internQuestions = () => {
       },
     ]).then(answers => {
       console.log(answers);
-      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.university);
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.school);
       employeeArr.push(intern);
 
       console.log(employeeArr);
