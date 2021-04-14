@@ -2,8 +2,8 @@ const Employee = require('../lib/Employee');
 
 describe("Employee", () => {
     it("Can create new employee card", () => {
-        const create = new Employee();
-        expect(typeof(create).toBe("person")
+        const c = new Employee();
+        expect(typeof(c).toBe("object")
     )});
 
     it("Name set via prompts", () => {
