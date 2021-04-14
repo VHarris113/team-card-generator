@@ -8,7 +8,7 @@ This application will allow the user of terminal prompts for anyone with a full 
 ## How-To Video Tutorial
 ![Video](https://drive.google.com/file/d/1IJmYL3sCxzasQ2n0dHvRBiJWwexoo1Fp/view);
 
-![Video](https://drive.google.com/file/d/1IJmYL3sCxzasQ2n0dHvRBiJWwexoo1Fp/view);
+![Video](https://drive.google.com/file/d/1lgoIB0carkVyhb4ns9aSqJtQ5OcdB-7L/view;
 
 ## Testing Phases
 I used unit testing to test if each aspect of the app would work. I used different types of 
