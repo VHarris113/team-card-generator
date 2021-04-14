@@ -6,7 +6,9 @@ This application will allow the user of terminal prompts for anyone with a full 
 ![Gif]();
 
 ## How-To Video Tutorial
-![Video]();
+![Video](https://drive.google.com/file/d/1IJmYL3sCxzasQ2n0dHvRBiJWwexoo1Fp/view);
+
+![Video](https://drive.google.com/file/d/1IJmYL3sCxzasQ2n0dHvRBiJWwexoo1Fp/view);
 
 ## Testing Phases
 I used unit testing to test if each aspect of the app would work. I used different types of 

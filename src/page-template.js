@@ -61,7 +61,7 @@ const render = (employees) => {
                       <ul class="list-group">
                         <li class="list-group-item">ID: ${employee.getId()}</li>
                         <li class="list-group-item">Email: ${employee.getEmail()}</li>
-                        <li class="list-group-item">Office Number: ${employee.getSchool()}</li>
+                        <li class="list-group-item">${employee.getSchool()}</li>
                       </ul>
                     </div>
                   </p>
