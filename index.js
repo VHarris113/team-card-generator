@@ -84,17 +84,17 @@ const engineerQuestions = () => {
     inquirer.prompt([
       {
         type: 'input',
-        name: 'name',
+        name: 'engineerName',
         message: "What is your engineer's name?",
       },
       {
         type: 'input',
-        name: 'email',
+        name: 'engineerEmail',
         message: "What's your engineer's email?"
       },
       {
         type: 'input',
-        name: 'id',
+        name: 'engineerId',
         message: "What's your engineer's id number?",
       },
       {
@@ -130,17 +130,17 @@ const internQuestions = () => {
     inquirer.prompt([
       {
         type: 'input',
-        name: 'name',
+        name: 'internName',
         message: "What is your intern's name?",
       },
       {
         type: 'input',
-        name: 'email',
+        name: 'internEmail',
         message: "What's your intern's email?"
       },
       {
         type: 'input',
-        name: 'id',
+        name: 'internId',
         message: "What's your intern's id number?",
       },
       {

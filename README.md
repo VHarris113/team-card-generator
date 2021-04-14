@@ -1,1 +1,2 @@
-# team-cards
+# Development Team Cards
+This application will allow the user of terminal prompts for anyone with a full stack development or design team to keep track of useful employee information. This card development application gives the user three positions to utilize: Manager, Engineer, and Intern.
