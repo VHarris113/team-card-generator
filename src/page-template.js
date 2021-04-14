@@ -4,7 +4,7 @@ const fs = require("fs");
 const render = (employees) => {
     let team = "";
 
-    employee.forEach((employee) => {
+    employees.forEach((employee) => {
         switch (employee.getRole()) {
             case "Manager":
             team += `
@@ -72,13 +72,7 @@ const render = (employees) => {
         default:
             return "Well, that's not good. It broke.";
         }});
-
-
-
-};
         
-
-    
     const htmlPage = `
     <!DOCTYPE html>
     <html lang="en">
@@ -103,5 +97,9 @@ const render = (employees) => {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
     </body>
-    </html>`
-}
+    </html>
+    `;
+    return htmlPage;
+};
+
+module.exports = render;
